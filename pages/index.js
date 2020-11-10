@@ -1,9 +1,15 @@
 import styled from 'styled-components'
 import React from "react";
+import { Activity } from "react-feather";
 
 
 export default function Home() {
-  return <Title>My page</Title>
+  return (
+    <>
+      <Title>My page</Title>
+      <Activity />
+    </>
+  )
 }
 
 const Title = styled.h1`
