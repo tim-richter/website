@@ -5,7 +5,8 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb"
+        "airbnb",
+        "prettier"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -21,7 +22,8 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "prettier"
     ],
     "settings": {
         "import/resolver": {
@@ -31,6 +33,7 @@
         }
     },
     "rules": {
+        "prettier/prettier": "error",
         "react/jsx-filename-extension": 0,
         "react/jsx-props-no-spreading": 0,
         "react/prop-types": 0,
