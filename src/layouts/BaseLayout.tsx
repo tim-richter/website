@@ -14,6 +14,7 @@ const Container = styled(Grid)`
 
 const Main = styled.main`
   align-self: center;
+  width: 100%;
 `;
 
 type Props = {
