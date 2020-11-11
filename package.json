@@ -21,6 +21,7 @@
     "react-is": "^16.8.0",
     "react-styled-flexboxgrid": "^3.2.1",
     "styled-components": "^5.0.0",
+    "styled-normalize": "^8.0.7",
     "styled-system": "^5.1.5"
   },
   "devDependencies": {
