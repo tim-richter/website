@@ -6,6 +6,11 @@ const theme: DefaultTheme = {
     secondary: '#FDE24F',
     text: '#363636',
   },
+  transitions: {
+    base(target = 'all') {
+      return `${target} 0.3s ease-in-out`;
+    },
+  },
 };
 
 export default theme;
