@@ -7,13 +7,13 @@ import DropdownCard from '../components/DropdownCard';
 const Title = styled.h1`
   font-size: 3rem;
   font-weight: 800;
-  margin-bottom: 48px;
+  margin-bottom: 64px;
 `;
 
 const BiggerParagraph = styled.p`
   font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 4px;
   text-transform: uppercase;
   word-spacing: 12px;
   color: ${({ theme }) => theme.colors.primary};

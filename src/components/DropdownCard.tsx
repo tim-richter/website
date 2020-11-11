@@ -22,6 +22,7 @@ const StyledCard = styled(Card)`
   flex-direction: column;
   white-space: pre-wrap;
   cursor: pointer;
+  overflow: hidden;
 `;
 
 const Title = styled.div`
@@ -29,8 +30,10 @@ const Title = styled.div`
 `;
 
 const Content = styled.div`
-  margin-top: 16px;
-  display: block;
+  margin-top: 24px;
+  font-size: 1rem;
+  color: ${({ theme }) => theme.colors.text};
+  line-height: 1.5rem;
 `;
 
 const DownArrow = styled(ChevronDown)`
