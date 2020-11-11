@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from './Header';
 
 const Main = styled.main`
   display: flex;
@@ -14,7 +13,6 @@ const Main = styled.main`
 const BaseLayout = ({ children }) => {
   return (
     <>
-      <Header />
       <Main>{children}</Main>
     </>
   );
