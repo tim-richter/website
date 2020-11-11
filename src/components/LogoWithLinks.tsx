@@ -23,7 +23,7 @@ const LogoWithLinks = () => {
     <Container>
       <StyledLink href="/about">About</StyledLink>
       <Logo />
-      <StyledLink href="/work">Work</StyledLink>
+      <StyledLink href="/projects">Projects</StyledLink>
     </Container>
   );
 };

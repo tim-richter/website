@@ -3,7 +3,7 @@ import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import BaseLayout from '../layouts/BaseLayout';
 import TeaserCard from '../components/TeaserCard';
 
-const Work = () => {
+const Projects = () => {
   return (
     <BaseLayout>
       <Grid>
@@ -17,4 +17,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default Projects;
