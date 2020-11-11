@@ -4,6 +4,7 @@ const theme: DefaultTheme = {
   colors: {
     primary: '#FF5470',
     secondary: '#FDE24F',
+    text: '#363636',
   },
 };
 
