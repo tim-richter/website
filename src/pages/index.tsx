@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import React from 'react';
 import { Activity } from 'react-feather';
+import BaseLayout from '../layouts/BaseLayout';
 
 export default function Home() {
   return (
-    <>
+    <BaseLayout>
       <Title>My page</Title>
       <Activity />
-    </>
+    </BaseLayout>
   );
 }
 
