@@ -1,11 +1,11 @@
 import React from 'react';
 import BaseLayout from '../layouts/BaseLayout';
-import Logo from '../components/Logo';
+import LogoWithLinks from '../components/LogoWithLinks';
 
 export default function Home() {
   return (
     <BaseLayout>
-      <Logo />
+      <LogoWithLinks />
     </BaseLayout>
   );
 }
