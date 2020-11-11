@@ -7,6 +7,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
+  flex-direction: column;
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     flex-direction: column;
@@ -37,7 +38,6 @@ const LogoWithLinks = () => {
     <Container>
       <StyledLink href="/about">About</StyledLink>
       <StyledLogo />
-      <StyledLink href="/projects">Projects</StyledLink>
     </Container>
   );
 };
