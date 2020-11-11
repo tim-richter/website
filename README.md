@@ -37,7 +37,7 @@ export default styled(StyledLink)`
 `
 ```
 
-**pages/index.js**
+**pages/index.tsx**
 
 ```javascript
 import StyledLink from '../components/StyledLink'
