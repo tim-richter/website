@@ -32,7 +32,7 @@ const About = () => {
 
       <Row center="xs">
         <StyledCol xs={12} md={6}>
-          <DropdownCard title="Medieninformatik Student at Beuth-Hochschule (4. Semester)">
+          <DropdownCard title="Medieninformatik Student at Beuth-Hochschule (4.&nbsp;Semester)">
             Languages that we use primarily: Java, React, Node.js <br />
             Optional Courses I took: Microservices, Web Engineering
           </DropdownCard>

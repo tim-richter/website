@@ -7,6 +7,10 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    flex-direction: column;
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -16,13 +20,23 @@ const StyledLink = styled(Link)`
   font-weight: bold;
   padding: 16px;
   letter-spacing: 4px;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    font-size: 1rem;
+  }
+`;
+
+const StyledLogo = styled(Logo)`
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: 200px;
+  }
 `;
 
 const LogoWithLinks = () => {
   return (
     <Container>
       <StyledLink href="/about">About</StyledLink>
-      <Logo />
+      <StyledLogo />
       <StyledLink href="/projects">Projects</StyledLink>
     </Container>
   );

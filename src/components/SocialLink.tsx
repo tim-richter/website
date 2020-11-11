@@ -8,6 +8,7 @@ const Link = styled.a`
   display: flex;
   align-content: center;
   transition: color 0.3s ease-in-out;
+  width: 30px;
 
   &:hover {
     color: ${({ theme }) => darken(0.3, theme.colors.primary)};
@@ -18,6 +19,7 @@ type Props = {
   children: React.ReactNode;
   to: string;
   label?: string;
+  className?: string;
 };
 
 /**
@@ -26,10 +28,11 @@ type Props = {
  * @param children should be a icon in most cases
  * @param to href attribute
  * @param label label if content has no text
+ * @param className
  */
-const SocialLink = ({ children, to, label }: Props) => {
+const SocialLink = ({ children, to, label, className }: Props) => {
   return (
-    <Link href={to} target="_blank" rel="noreferrer nofollow" aria-label={label}>
+    <Link href={to} className={className} target="_blank" rel="noreferrer nofollow" aria-label={label}>
       {children}
     </Link>
   );

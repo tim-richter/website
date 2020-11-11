@@ -35,6 +35,13 @@ const GlobalStyle = createGlobalStyle`
       color: ${({ theme }) => darken(0.3, theme.colors.primary)};
     }
   }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: ${({ theme }) => theme.colors.text};
+  }
 `;
 
 export default GlobalStyle;

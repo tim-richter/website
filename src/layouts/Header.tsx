@@ -26,10 +26,25 @@ const StyledLink = styled(Link)`
   font-weight: 600;
   display: flex;
   align-items: center;
+
+  .icon {
+    margin-right: 8px;
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    font-size: 1rem;
+
+    .icon {
+      width: 22px;
+      margin-right: 4px;
+    }
+  }
 `;
 
-const StyledArrow = styled(ArrowLeftCircle)`
-  margin-right: 8px;
+const SocialIcon = styled(SocialLink)`
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: 24px;
+  }
 `;
 
 const Header = () => {
@@ -40,20 +55,20 @@ const Header = () => {
     <Container isHome={isHome}>
       {!isHome && (
         <StyledLink href="/">
-          <StyledArrow /> Go back
+          <ArrowLeftCircle className="icon" /> Go back
         </StyledLink>
       )}
 
       <SocialContainer>
-        <SocialLink label="linkedin" to="https://www.linkedin.com/in/tim-richter-developer/">
-          <Linkedin width={30} height={30} />
-        </SocialLink>
-        <SocialLink label="github" to="https://github.com/tim-richter">
-          <GitHub width={30} height={30} />
-        </SocialLink>
-        <SocialLink label="e-mail" to="mailto:tim@timrichter.dev">
-          <Mail width={30} height={30} />
-        </SocialLink>
+        <SocialIcon label="linkedin" to="https://www.linkedin.com/in/tim-richter-developer/">
+          <Linkedin width="100%" height="100%" />
+        </SocialIcon>
+        <SocialIcon label="github" to="https://github.com/tim-richter">
+          <GitHub width="100%" height="100%" />
+        </SocialIcon>
+        <SocialIcon label="e-mail" to="mailto:tim@timrichter.dev">
+          <Mail width="100%" height="100%" />
+        </SocialIcon>
       </SocialContainer>
     </Container>
   );

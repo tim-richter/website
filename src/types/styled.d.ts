@@ -11,5 +11,11 @@ declare module 'styled-components' {
     transitions: {
       base: Function;
     };
+    breakpoints: {
+      xs: string;
+      sm: string;
+      md: string;
+      lg: string;
+    };
   }
 }
