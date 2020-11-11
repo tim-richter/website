@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, GitHub } from 'react-feather';
+import { Linkedin, GitHub, Mail } from 'react-feather';
 import styled from 'styled-components';
 import SocialLink from '../components/SocialLink';
 
@@ -22,6 +22,9 @@ const Header = () => {
       </SocialLink>
       <SocialLink to="https://github.com/tim-richter">
         <GitHub width={30} height={30} />
+      </SocialLink>
+      <SocialLink to="mailto:tim@timrichter.dev">
+        <Mail width={30} height={30} />
       </SocialLink>
     </Container>
   );
