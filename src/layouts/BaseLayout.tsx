@@ -8,6 +8,7 @@ const Main = styled.main`
   flex-direction: column;
   align-content: center;
   height: 100vh;
+  text-align: center;
 `;
 
 const BaseLayout = ({ children }) => {
