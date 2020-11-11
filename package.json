@@ -14,10 +14,12 @@
     "framer-motion": "^2.9.4",
     "next": "latest",
     "polished": "^4.0.3",
+    "prop-types": "^15.7.2",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-feather": "^2.0.8",
     "react-is": "^16.8.0",
+    "react-styled-flexboxgrid": "^3.2.1",
     "styled-components": "^5.0.0",
     "styled-system": "^5.1.5"
   },
