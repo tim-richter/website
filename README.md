@@ -1,4 +1,4 @@
-# Example app with styled-components
+# Personal website
 
 ### Notes
 
