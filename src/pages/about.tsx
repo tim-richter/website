@@ -47,17 +47,17 @@ const About = () => {
             design correctly and making sure the website is compliant with best practices for seo, sea etc.
           </DropdownCard>
         </StyledCol>
-        <StyledCol xs={6} md={3}>
+        <StyledCol xs={12} md={3}>
           <DropdownCard title="Berliner">Born and Living 🐻</DropdownCard>
         </StyledCol>
-        <StyledCol xs={6} md={6}>
+        <StyledCol xs={12} md={6}>
           <DropdownCard title="Passionate Developer">
             I <b>love</b> javascript especially typescript. I&apos;m passionate about React and everything that has to
             do with css-in-js e.g. styled-components. Currently I&apos;m learning the ins and outs of Golang and am very
             excited about what happens in the next years in that language.
           </DropdownCard>
         </StyledCol>
-        <StyledCol xs={6} md={3}>
+        <StyledCol xs={12} md={3}>
           <DropdownCard title="Musician">Guitar and Bass 🎸</DropdownCard>
         </StyledCol>
       </Row>

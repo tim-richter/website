@@ -8,13 +8,15 @@ const Container = styled(Grid)`
   justify-content: center;
   flex-direction: column;
   align-content: center;
-  height: 100vh;
+  height: calc(100vh - 80px);
   text-align: center;
+  margin-top: 80px;
 `;
 
 const Main = styled.main`
   align-self: center;
   width: 100%;
+  height: 100%;
 `;
 
 type Props = {
