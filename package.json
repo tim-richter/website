@@ -10,6 +10,7 @@
     "test:watch": "jest --watchAll"
   },
   "dependencies": {
+    "fontfaceobserver": "^2.1.0",
     "next": "latest",
     "polished": "^4.0.3",
     "react": "^16.8.0",
