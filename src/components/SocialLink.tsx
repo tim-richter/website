@@ -14,15 +14,22 @@ const Link = styled.a`
   }
 `;
 
+type Props = {
+  children: React.ReactNode;
+  to: string;
+  label?: string;
+};
+
 /**
  * Link component with target blank and social icon styling
  *
  * @param children should be a icon in most cases
  * @param to href attribute
+ * @param label label if content has no text
  */
-const SocialLink = ({ children, to }) => {
+const SocialLink = ({ children, to, label }: Props) => {
   return (
-    <Link href={to} target="_blank" rel="noreferrer nofollow">
+    <Link href={to} target="_blank" rel="noreferrer nofollow" aria-label={label}>
       {children}
     </Link>
   );

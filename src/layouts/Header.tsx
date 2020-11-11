@@ -17,13 +17,13 @@ const Container = styled.header`
 const Header = () => {
   return (
     <Container>
-      <SocialLink to="https://www.linkedin.com/in/tim-richter-developer/">
+      <SocialLink label="linkedin" to="https://www.linkedin.com/in/tim-richter-developer/">
         <Linkedin width={30} height={30} />
       </SocialLink>
-      <SocialLink to="https://github.com/tim-richter">
+      <SocialLink label="github" to="https://github.com/tim-richter">
         <GitHub width={30} height={30} />
       </SocialLink>
-      <SocialLink to="mailto:tim@timrichter.dev">
+      <SocialLink label="e-mail" to="mailto:tim@timrichter.dev">
         <Mail width={30} height={30} />
       </SocialLink>
     </Container>
