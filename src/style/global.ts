@@ -1,11 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
+import { darken } from 'polished';
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
 
   * {
     box-sizing: border-box;
+  }
+
+  html {
+    font-size: 17px;
   }
 
   body {
@@ -18,6 +23,17 @@ const GlobalStyle = createGlobalStyle`
   img {
     max-width: 100%;
     height: auto;
+  }
+
+  a {
+    color: ${({ theme }) => theme.colors.primary};
+    transition: ${({ theme }) => theme.transitions.base('color')};
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: ${({ theme }) => darken(0.3, theme.colors.primary)};
+    }
   }
 `;
 
