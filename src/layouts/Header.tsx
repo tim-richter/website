@@ -18,10 +18,10 @@ const Header = () => {
   return (
     <Container>
       <SocialLink to="https://www.linkedin.com/in/tim-richter-developer/">
-        <Linkedin />
+        <Linkedin width={30} height={30} />
       </SocialLink>
       <SocialLink to="https://github.com/tim-richter">
-        <GitHub />
+        <GitHub width={30} height={30} />
       </SocialLink>
     </Container>
   );

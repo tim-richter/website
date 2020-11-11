@@ -4,7 +4,7 @@ import { darken } from 'polished';
 
 const Link = styled.a`
   color: ${({ theme }) => theme.colors.primary};
-  margin: 0 4px;
+  margin: 0 8px;
   display: flex;
   align-content: center;
   transition: color 0.3s ease-in-out;
