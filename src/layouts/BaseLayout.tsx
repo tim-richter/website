@@ -1,14 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Grid } from 'react-styled-flexboxgrid';
 import SEO from '../components/SEO';
 
-const Main = styled.main`
+const Container = styled(Grid)`
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-content: center;
   height: 100vh;
   text-align: center;
+`;
+
+const Main = styled.main`
+  align-self: center;
 `;
 
 type Props = {
@@ -23,7 +28,9 @@ const BaseLayout = ({ children, seo }: Props) => {
   return (
     <>
       <SEO {...seo} />
-      <Main>{children}</Main>
+      <Container>
+        <Main>{children}</Main>
+      </Container>
     </>
   );
 };
