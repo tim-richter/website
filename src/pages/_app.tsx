@@ -20,6 +20,7 @@ export default function App({ Component, pageProps, router }) {
           key={router.route}
           initial="pageInitial"
           animate="pageAnimate"
+          transition={{ duration: .5 }}
           variants={{
             pageInitial: {
               opacity: 0,
