@@ -13,8 +13,8 @@ export default function App({ Component, pageProps, router }) {
 
   return (
     <>
-      <GlobalStyle />
       <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <Header />
         <motion.div
           key={router.route}
