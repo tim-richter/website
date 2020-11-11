@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import Header from './Header';
 
 const Main = styled.main`
-  margin-top: 60px;
-  padding: 24px;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
 `;
 
 const BaseLayout = ({ children }) => {
