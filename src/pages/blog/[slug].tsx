@@ -9,7 +9,11 @@ import { addApolloState, initializeApollo } from '../../graphql/apolloClient';
 import { SINGLE_ARTICLE } from '../../graphql/queries/articles';
 
 const Post = ({ data: { content, image, title }}) => {
-  return <BaseLayout><div dangerouslySetInnerHTML={{ __html: content }} /></BaseLayout>;
+  return (
+    <BaseLayout>
+      <div dangerouslySetInnerHTML={{ __html: content }} />
+    </BaseLayout>
+  );
 };
 
 export async function getServerSideProps({ params }) {
