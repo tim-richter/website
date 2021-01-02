@@ -4,7 +4,6 @@ import { darken } from 'polished';
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
-
   * {
     box-sizing: border-box;
   }
@@ -26,13 +25,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${({ theme }) => theme.colors.primary};
-    transition: ${({ theme }) => theme.transitions.base('color')};
+    color: ${({theme}) => theme.colors.primary};
+    transition: ${({theme}) => theme.transitions.base('color')};
     text-decoration: none;
 
     &:hover,
     &:focus {
-      color: ${({ theme }) => darken(0.3, theme.colors.primary)};
+      color: ${({theme}) => darken(0.3, theme.colors.primary)};
     }
   }
 
@@ -40,7 +39,12 @@ const GlobalStyle = createGlobalStyle`
   h2,
   h3,
   h4 {
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({theme}) => theme.colors.text};
+  }
+
+  pre[class*="language-"] {
+    box-shadow: 0 0 5px #c4c4c4;
+    border-radius: 10px;
   }
 
   code[class*="language-"],
@@ -50,11 +54,11 @@ const GlobalStyle = createGlobalStyle`
     word-spacing: normal;
     word-break: normal;
     word-wrap: normal;
-    color: #90a4ae;
-    background: #fafafa;
+    color: #e53935;
+    background: #ffffff;
     font-family: Roboto Mono, monospace;
-    font-size: 1em;
-    line-height: 1.5em;
+    font-size: .9rem;
+    line-height: 1.3rem;
 
     -moz-tab-size: 4;
     -o-tab-size: 4;
@@ -70,16 +74,16 @@ const GlobalStyle = createGlobalStyle`
   pre[class*="language-"]::-moz-selection,
   code[class*="language-"] ::-moz-selection,
   pre[class*="language-"] ::-moz-selection {
-    background: #cceae7;
-    color: #263238;
+    background: ${({theme}) => theme.colors.primary};
+    color: white;
   }
 
   code[class*="language-"]::selection,
   pre[class*="language-"]::selection,
   code[class*="language-"] ::selection,
   pre[class*="language-"] ::selection {
-    background: #cceae7;
-    color: #263238;
+    background: ${({theme}) => theme.colors.primary};
+    color: white;
   }
 
   :not(pre) > code[class*="language-"] {
@@ -91,8 +95,8 @@ const GlobalStyle = createGlobalStyle`
   pre[class*="language-"] {
     overflow: auto;
     position: relative;
-    margin: 0.5em 0;
-    padding: 1.25em 1em;
+    margin: 2rem 0;
+    padding: 1rem 1rem;
   }
 
   .language-css > code,
@@ -107,6 +111,10 @@ const GlobalStyle = createGlobalStyle`
 
   .token.atrule {
     color: #7c4dff;
+  }
+
+  .token.parameter {
+    color: #f6a434;
   }
 
   .token.attr-name {
