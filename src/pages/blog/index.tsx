@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Col, Row} from 'react-styled-flexboxgrid';
+import { Col, Row } from 'react-styled-flexboxgrid';
 import BaseLayout from '../../layouts/BaseLayout';
 import { initializeApollo, addApolloState } from '../../graphql/apolloClient';
 import { ALL_ARTICLES } from '../../graphql/queries/articles';
 import PostCard from '../../components/PostCard';
-import {buildPostLinkUrl} from "../../util/api";
+import { buildPostLinkUrl } from '../../util/api';
 
 const Title = styled.h1`
   font-size: 3rem;
@@ -36,7 +36,12 @@ const Blog: React.FC<Props> = ({ data }) => {
         <Row center="xs">
           {data.articles.map((article) => (
             <Col xs={12} md={4}>
-              <PostCard title={article.title} imgUrl={article.image.url} imgAlt={article.image.alternativeText} link={buildPostLinkUrl(article.slug)} />
+              <PostCard
+                title={article.title}
+                imgUrl={article.image.url}
+                imgAlt={article.image.alternativeText}
+                link={buildPostLinkUrl(article.slug)}
+              />
             </Col>
           ))}
         </Row>
