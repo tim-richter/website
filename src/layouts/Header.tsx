@@ -26,6 +26,7 @@ const StyledLink = styled(Link)`
   font-weight: 600;
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   .icon {
     margin-right: 8px;
@@ -54,7 +55,7 @@ const Header = () => {
   return (
     <Container isHome={isHome}>
       {!isHome && (
-        <StyledLink href="/">
+        <StyledLink as="span" onClick={() => router.back()}>
           <ArrowLeftCircle className="icon" /> Go back
         </StyledLink>
       )}
