@@ -23,6 +23,7 @@ export const SINGLE_ARTICLE = gql`
     articles(where: { slug: $slug }) {
       title
       content
+      description
       image {
         id
         url

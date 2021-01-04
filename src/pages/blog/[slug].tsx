@@ -7,10 +7,14 @@ import remarkRehype from 'remark-rehype';
 import BaseLayout from '../../layouts/BaseLayout';
 import { addApolloState, initializeApollo } from '../../graphql/apolloClient';
 import { SINGLE_ARTICLE } from '../../graphql/queries/articles';
+import Image from '../../components/Image';
 
-const Post = ({ data: { content, image, title }}) => {
+const Post = ({ data: { content, image, title, description } }) => {
   return (
     <BaseLayout>
+      <h1>{title}</h1>
+      <h2>{description}</h2>
+      <Image src={image.url} alt="Bla" isFromApi />
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </BaseLayout>
   );
