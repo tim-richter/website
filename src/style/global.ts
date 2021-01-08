@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    font-size: 17px;
+    font-size: 18px;
   }
 
   body {
@@ -42,9 +42,23 @@ const GlobalStyle = createGlobalStyle`
     color: ${({theme}) => theme.colors.text};
   }
 
+  p {
+    line-height: 1.4;
+  }
+
+  blockquote {
+    text-align: center;
+    border-radius: 5px;
+    margin: 46px 24px;
+    padding: 8px;
+    font-weight: 400;
+    background-color: ${({theme}) => theme.colors.secondary};
+  }
+
   pre[class*="language-"] {
     box-shadow: 0 0 5px #c4c4c4;
     border-radius: 10px;
+    margin: 2rem 0 1rem 0 !important;
   }
 
   code[class*="language-"],

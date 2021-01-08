@@ -24,6 +24,7 @@ export const SINGLE_ARTICLE = gql`
       title
       content
       description
+      publishedAt
       image {
         id
         url
