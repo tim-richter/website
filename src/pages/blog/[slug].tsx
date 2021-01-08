@@ -4,18 +4,60 @@ import unified from 'unified';
 import html from 'rehype-stringify';
 import rehypePrism from '@mapbox/rehype-prism';
 import remarkRehype from 'remark-rehype';
+import dayjs from 'dayjs';
+import { Col, Row } from 'react-styled-flexboxgrid';
+import styled from 'styled-components';
+import { transparentize } from 'polished';
 import BaseLayout from '../../layouts/BaseLayout';
 import { addApolloState, initializeApollo } from '../../graphql/apolloClient';
 import { SINGLE_ARTICLE } from '../../graphql/queries/articles';
 import Image from '../../components/Image';
 
-const Post = ({ data: { content, image, title, description } }) => {
+const HeaderTextContainer = styled(Col)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding-right: 60px;
+`;
+
+const Title = styled.h1`
+  font-size: 2.7rem;
+  font-weight: 900;
+  line-height: 1.2;
+`;
+
+const SubTitle = styled.small`
+  font-size: 1rem;
+  line-height: 1.4;
+`;
+
+const Date = styled.time`
+  font-size: 0.8rem;
+  margin-top: 24px;
+  text-transform: uppercase;
+  color: ${({ theme }) => transparentize(0.3, theme.colors.text)};
+`;
+
+const Content = styled.div`
+  text-align: left;
+`;
+
+const Post = ({ data: { content, image, title, description, publishedAt } }) => {
   return (
     <BaseLayout>
-      <h1>{title}</h1>
-      <h2>{description}</h2>
-      <Image src={image.url} alt="Bla" isFromApi />
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <Row>
+        <div />
+        <HeaderTextContainer xs={12} md={5}>
+          <Title>{title}</Title>
+          <SubTitle>{description}</SubTitle>
+          <Date>{dayjs(publishedAt).format('YYYY MMMM DD')}</Date>
+        </HeaderTextContainer>
+        <Col xs={12} md={7}>
+          <Image src={image.url} alt="Bla" isFromApi />
+        </Col>
+      </Row>
+      <Content dangerouslySetInnerHTML={{ __html: content }} />
     </BaseLayout>
   );
 };
