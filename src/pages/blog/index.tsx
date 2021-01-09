@@ -35,7 +35,7 @@ const Blog: React.FC<Props> = ({ data }) => {
       {data.articles && data.articles.length > 0 && (
         <Row center="xs">
           {data.articles.map((article) => (
-            <Col xs={12} md={4}>
+            <Col xs={12} sm={6} md={4}>
               <PostCard
                 title={article.title}
                 imgUrl={article.image.url}

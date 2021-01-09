@@ -17,5 +17,13 @@ declare module 'styled-components' {
       md: string;
       lg: string;
     };
+    flexboxgrid: {
+      breakpoints: {
+        xs: number;
+        sm: number;
+        md: number;
+        lg: number;
+      };
+    };
   }
 }

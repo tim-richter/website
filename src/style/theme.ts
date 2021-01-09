@@ -13,9 +13,17 @@ const theme: DefaultTheme = {
   },
   breakpoints: {
     xs: '0',
-    sm: '48em',
-    md: '64em',
+    sm: '40em',
+    md: '50em',
     lg: '75em',
+  },
+  flexboxgrid: {
+    breakpoints: {
+      xs: 0, // em
+      sm: 40, // em
+      md: 50, // em
+      lg: 75, // em
+    },
   },
 };
 

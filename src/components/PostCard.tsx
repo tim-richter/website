@@ -17,13 +17,14 @@ const StyledImg = styled(Image)`
 `;
 
 const Content = styled.div`
-  padding: 8px 16px;
+  padding: 32px 24px;
   font-size: 1rem;
 `;
 
 const Title = styled.h2`
   font-weight: 600;
   font-size: 1rem;
+  margin: 0;
 `;
 
 const PostCard: React.FC<Props> = ({ title, imgUrl, imgAlt, link }) => {

@@ -19,12 +19,20 @@ const HeaderTextContainer = styled(Col)`
   justify-content: center;
   text-align: left;
   padding-right: 60px;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding-right: 0.5rem;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 2.7rem;
   font-weight: 900;
   line-height: 1.2;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: 2rem;
+  }
 `;
 
 const SubTitle = styled.small`
@@ -41,22 +49,29 @@ const Date = styled.time`
 
 const Content = styled.div`
   text-align: left;
+  max-width: 50em;
+  width: 100%;
+`;
+
+const StyledRow = styled(Row)`
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    justify-content: center;
+  }
 `;
 
 const Post = ({ data: { content, image, title, description, publishedAt } }) => {
   return (
     <BaseLayout>
-      <Row>
-        <div />
+      <StyledRow>
         <HeaderTextContainer xs={12} md={5}>
           <Title>{title}</Title>
           <SubTitle>{description}</SubTitle>
           <Date>{dayjs(publishedAt).format('YYYY MMMM DD')}</Date>
         </HeaderTextContainer>
-        <Col xs={12} md={7}>
+        <Col xs={12} sm={8} md={7}>
           <Image src={image.url} alt="Bla" isFromApi />
         </Col>
-      </Row>
+      </StyledRow>
       <Content dangerouslySetInnerHTML={{ __html: content }} />
     </BaseLayout>
   );

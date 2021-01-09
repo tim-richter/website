@@ -42,6 +42,10 @@ const GlobalStyle = createGlobalStyle`
     color: ${({theme}) => theme.colors.text};
   }
 
+  h2 {
+    margin-top: 4rem;
+  }
+
   p {
     line-height: 1.4;
   }
@@ -53,6 +57,14 @@ const GlobalStyle = createGlobalStyle`
     padding: 8px;
     font-weight: 400;
     background-color: ${({theme}) => theme.colors.secondary};
+
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+      margin: 46px 0;
+    }
+  }
+
+  ul li {
+    line-height: 1.6;
   }
 
   pre[class*="language-"] {
