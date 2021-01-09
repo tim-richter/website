@@ -8,6 +8,7 @@ import dayjs from 'dayjs';
 import { Col, Row } from 'react-styled-flexboxgrid';
 import styled from 'styled-components';
 import { transparentize } from 'polished';
+import ErrorPage from 'next/error';
 import BaseLayout from '../../layouts/BaseLayout';
 import { addApolloState, initializeApollo } from '../../graphql/apolloClient';
 import { SINGLE_ARTICLE } from '../../graphql/queries/articles';
@@ -59,7 +60,22 @@ const StyledRow = styled(Row)`
   }
 `;
 
-const Post = ({ data: { content, image, title, description, publishedAt } }) => {
+interface Props {
+  data: {
+    content: string;
+    image: {
+      url: string;
+    };
+    title: string;
+    description: string;
+    publishedAt: Date;
+    error: boolean;
+  };
+}
+
+const Post: React.FC<Props> = ({ data: { content, image, title, description, publishedAt, error } }) => {
+  if (error) return <ErrorPage statusCode={404} />;
+
   return (
     <BaseLayout>
       <StyledRow>
@@ -87,7 +103,7 @@ export async function getServerSideProps({ params }) {
     },
   });
 
-  if (result.data.articles[0].content) {
+  if (result?.data?.articles[0]?.content) {
     const parsedContent = await unified()
       .use(markdown)
       .use(remarkRehype)
@@ -107,7 +123,7 @@ export async function getServerSideProps({ params }) {
 
   return addApolloState(apolloClient, {
     props: {
-      data: result.data,
+      data: { error: true },
     },
   });
 }

@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const ALL_ARTICLES = gql`
   query AllArticles {
-    articles {
+    articles(where: { status: "published" }) {
       id
       title
       slug
@@ -20,7 +20,7 @@ export const ALL_ARTICLES = gql`
 
 export const SINGLE_ARTICLE = gql`
   query SingleArticle($slug: String!) {
-    articles(where: { slug: $slug }) {
+    articles(where: { slug: $slug, status: "published" }) {
       title
       content
       description
