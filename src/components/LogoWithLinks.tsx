@@ -38,6 +38,7 @@ const LogoWithLinks = () => {
     <Container>
       <StyledLink href="/about">About</StyledLink>
       <StyledLogo />
+      <StyledLink href="/blog">Blog</StyledLink>
     </Container>
   );
 };

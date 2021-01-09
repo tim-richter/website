@@ -8,15 +8,18 @@ const Container = styled(Grid)`
   justify-content: center;
   flex-direction: column;
   align-content: center;
-  height: calc(100vh - 80px);
   text-align: center;
   margin-top: 80px;
+  margin-bottom: 120px;
 `;
 
 const Main = styled.main`
   align-self: center;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 type Props = {

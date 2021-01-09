@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown } from 'react-feather';
 import Card from './Card';
-import { ChevronDown } from 'react-feather'
 
 type Props = {
   title: string;
@@ -55,14 +55,9 @@ const DropdownCard = ({ title, children }: Props) => {
     <StyledCard onClick={() => handleClick()}>
       <Title>{title}</Title>
 
-      <AnimatePresence initial={true}>
+      <AnimatePresence initial>
         {!isOpen && (
-          <motion.div
-            key="icon"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
+          <motion.div key="icon" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             <DownArrow />
           </motion.div>
         )}
@@ -77,7 +72,7 @@ const DropdownCard = ({ title, children }: Props) => {
             exit="collapsed"
             variants={{
               open: { opacity: 1, height: 'auto' },
-              collapsed: { opacity: 0, height: 0 }
+              collapsed: { opacity: 0, height: 0 },
             }}
             transition={{ duration: 0.5, ease: [0, 0.5, 0.7, 0.9] }}
           >
