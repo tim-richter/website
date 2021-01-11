@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, GitHub, Mail, ArrowLeftCircle } from 'react-feather';
+import {Linkedin, GitHub, Mail, ArrowLeftCircle, Twitter} from 'react-feather';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import Link from '../components/Link';
@@ -67,6 +67,9 @@ const Header = () => {
         </SocialIcon>
         <SocialIcon label="github" to="https://github.com/tim-richter">
           <GitHub width="100%" height="100%" />
+        </SocialIcon>
+        <SocialIcon label="dev" to="https://twitter.com/tim_c_richter">
+          <Twitter width="100%" height="100%" />
         </SocialIcon>
         <SocialIcon label="e-mail" to="mailto:tim@timrichter.dev">
           <Mail width="100%" height="100%" />
