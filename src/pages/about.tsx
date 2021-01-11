@@ -25,7 +25,7 @@ const StyledCol = styled(Col)`
 
 const About = () => {
   return (
-    <BaseLayout>
+    <BaseLayout seo={{ title: 'About', description: 'Get to know Tim' }}>
       <Title>Hi, my name is Tim 👋</Title>
 
       <BiggerParagraph>I&apos;m a</BiggerParagraph>

@@ -5,9 +5,10 @@ import { useRouter } from 'next/router';
 type Props = {
   title?: string;
   description?: string;
+  image?: string;
 };
 
-const SEO = ({ title, description }: Props) => {
+const SEO = ({ title, description, image }: Props) => {
   const router = useRouter();
 
   return (
@@ -23,13 +24,13 @@ const SEO = ({ title, description }: Props) => {
 
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
-        <title>{title}</title>
+        <title>{`${title} | Tim Richter`}</title>
         <meta name="description" content={description} />
 
         <meta property="og:title" content={title} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={router.asPath} />
-        <meta property="og:image" content="/images/logo_share.png" />
+        <meta property="og:image" content={image} />
         <meta property="og:description" content={description} />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -37,15 +38,16 @@ const SEO = ({ title, description }: Props) => {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:creator" content="@tim_c_richter" />
-        <meta name="twitter:image" content="/images/logo_share.png" />
+        <meta name="twitter:image" content={image} />
       </Head>
     </>
   );
 };
 
 SEO.defaultProps = {
-  title: 'Tim Richter Developer',
-  description: 'Tim Richter is a determined Web Developer.',
+  title: 'Home',
+  description: 'Tim Richter - Web Developer',
+  image: '/images/logo_share.png',
 };
 
 export default SEO;
