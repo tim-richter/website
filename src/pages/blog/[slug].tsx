@@ -13,6 +13,7 @@ import BaseLayout from '../../layouts/BaseLayout';
 import { addApolloState, initializeApollo } from '../../graphql/apolloClient';
 import { SINGLE_ARTICLE } from '../../graphql/queries/articles';
 import Image from '../../components/Image';
+import {buildImageLinkUrl} from "../../util/api";
 
 const HeaderTextContainer = styled(Col)`
   display: flex;
@@ -77,7 +78,7 @@ const Post: React.FC<Props> = ({ data: { content, image, title, description, pub
   if (error) return <ErrorPage statusCode={404} />;
 
   return (
-    <BaseLayout>
+    <BaseLayout seo={{ title, description, image: buildImageLinkUrl(image.url) }}>
       <StyledRow>
         <HeaderTextContainer xs={12} md={5}>
           <Title>{title}</Title>

@@ -27,6 +27,7 @@ type Props = {
   seo?: {
     title?: string;
     description?: string;
+    image?: string;
   };
 };
 

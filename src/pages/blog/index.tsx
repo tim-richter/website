@@ -29,7 +29,7 @@ interface Props {
 
 const Blog: React.FC<Props> = ({ data }) => {
   return (
-    <BaseLayout>
+    <BaseLayout seo={{ title: 'Blog', description: 'I also write blog posts' }}>
       <Title>Blog ✍️</Title>
 
       {data.articles && data.articles.length > 0 && (
