@@ -1,4 +1,4 @@
-name: CI
+name: MasterCI
 
 on:
   push:
