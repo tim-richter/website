@@ -51,6 +51,7 @@
                 "ts": "never",
                 "tsx": "never"
             }
-        ]
+        ],
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.tsx"], "optionalDependencies": false, "peerDependencies": false}]
     }
 }
