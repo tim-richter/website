@@ -3,15 +3,10 @@ name: CI
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
-  workflow_dispatch:
-    inputs:
-      tags:
-        description: 'Manual Deploy'  
 
 jobs:
-  build:
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
 
     steps:
