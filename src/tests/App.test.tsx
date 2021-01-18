@@ -5,13 +5,10 @@ import { RouterContext } from 'next/dist/next-server/lib/router-context';
 import StyledComponent from './styledComponent';
 import App from '../pages';
 
-nextRouter.useRouter = jest.fn();
-nextRouter.useRouter.mockImplementation(() => ({ route: '/' }));
-
 describe('App', () => {
   it('renders without crashing', () => {
     render(
-      <RouterContext.Provider value={nextRouter}>
+      <RouterContext.Provider value={nextRouter as any}>
         <StyledComponent>
           <App />
         </StyledComponent>
