@@ -1,5 +1,7 @@
 # Personal website
 
+[![codecov](https://codecov.io/gh/tim-richter/website/branch/master/graph/badge.svg?token=DXRIUPG9DD)](https://codecov.io/gh/tim-richter/website)
+
 This repository contains the frontend project for timrichter.dev. It is a [NextJS](https://nextjs.org) project written in [TypeScript](https://www.typescriptlang.org). [Strapi](https://strapi.io) is used as CMS.
 
 ## Local Dev
