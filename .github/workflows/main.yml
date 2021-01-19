@@ -1,10 +1,29 @@
 name: MasterCI
 
+env:
+  CODECOV_TOKEN: "c0feeb47-4495-4495-8247-e706294cafdf"
+
 on:
   push:
     branches: [ master ]
 
 jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: yarn
+        name: Install dependencies
+      - run: yarn run test
+        name: Run test
+      - run: bash <(curl -s https://codecov.io/bash)
+        name: Upload Coverage to Codecov
+
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
