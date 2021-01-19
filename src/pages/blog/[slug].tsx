@@ -13,7 +13,7 @@ import BaseLayout from '../../layouts/BaseLayout';
 import { addApolloState, initializeApollo } from '../../graphql/apolloClient';
 import { SINGLE_ARTICLE } from '../../graphql/queries/articles';
 import Image from '../../components/Image';
-import {buildImageLinkUrl} from "../../util/api";
+import { buildImageLinkUrl } from '../../util/api';
 
 const HeaderTextContainer = styled(Col)`
   display: flex;
