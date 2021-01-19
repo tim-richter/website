@@ -1,5 +1,8 @@
 name: BranchCI
 
+env:
+  CODECOV_TOKEN: "c0feeb47-4495-4495-8247-e706294cafdf"
+
 on:
   push:
     branches-ignore:
@@ -19,3 +22,5 @@ jobs:
         name: Install dependencies
       - run: yarn run test
         name: Run test
+      - run: bash <(curl -s https://codecov.io/bash)
+        name: Upload Coverage to Codecov
