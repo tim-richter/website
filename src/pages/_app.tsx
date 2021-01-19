@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ApolloProvider } from '@apollo/client';
 import theme from '../style/theme';
 import GlobalStyle from '../style/global';
-import Fonts from '../components/Fonts';
+import initFonts from '../util/fonts';
 import Header from '../layouts/Header';
 import { useApollo } from '../graphql/apolloClient';
 
@@ -12,7 +12,7 @@ export default function App({ Component, pageProps, router }) {
   const apolloClient = useApollo(pageProps);
 
   useEffect(() => {
-    Fonts();
+    initFonts();
   }, []);
 
   return (

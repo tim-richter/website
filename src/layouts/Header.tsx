@@ -1,5 +1,5 @@
 import React from 'react';
-import {Linkedin, GitHub, Mail, ArrowLeftCircle, Twitter} from 'react-feather';
+import { Linkedin, GitHub, Mail, ArrowLeftCircle, Twitter } from 'react-feather';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import Link from '../components/Link';

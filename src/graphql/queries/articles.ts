@@ -1,5 +1,7 @@
 import { gql } from '@apollo/client';
 
+/* istanbul ignore file */
+
 export const ALL_ARTICLES = gql`
   query AllArticles {
     articles(where: { status: "published" }) {

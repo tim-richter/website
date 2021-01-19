@@ -2,6 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 import { darken } from 'polished';
 
+/* istanbul ignore file */
+
 const GlobalStyle = createGlobalStyle`
   ${normalize}
   * {

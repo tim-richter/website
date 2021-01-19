@@ -1,5 +1,7 @@
 import { DefaultTheme } from 'styled-components';
 
+/* istanbul ignore file */
+
 const theme: DefaultTheme = {
   colors: {
     primary: '#FF5470',
