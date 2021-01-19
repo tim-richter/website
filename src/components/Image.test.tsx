@@ -1,15 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import StyledComponent from '../tests/styledComponent';
-import Card from './Card';
+import Image from './Image';
 
-describe('COMPONENT Card', () => {
-  it('renders without crashing', () => {
+describe('COMPONENT Image', () => {
+  it('should render without crashing', () => {
     render(
       <StyledComponent>
-        <Card>Test Content</Card>
+        <Image src="test" alt="test" />
       </StyledComponent>
     );
-    expect(screen.getByText('Test Content')).toBeInTheDocument();
+    expect(screen.getByRole('img')).toBeInTheDocument();
   });
 });
