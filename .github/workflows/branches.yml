@@ -40,3 +40,17 @@ jobs:
         name: Install dependencies
       - run: yarn run test:e2e
         name: Run E2E Tests
+
+  test_lint:
+    name: Lint Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: yarn
+        name: Install dependencies
+      - run: yarn run test:lint
+        name: Run test

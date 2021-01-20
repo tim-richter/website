@@ -10,7 +10,8 @@
     "test:watch": "jest --watchAll",
     "test:e2e": "start-server-and-test dev http://localhost:3000 test:e2e:run",
     "test:e2e:run": "npx cypress run",
-    "test:e2e:open": "npx cypress open"
+    "test:e2e:open": "npx cypress open",
+    "test:lint": "eslint ."
   },
   "dependencies": {
     "@apollo/client": "^3.3.6",
