@@ -2,13 +2,14 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import React from 'react';
 import { darken } from 'polished';
+import { typography, TypographyProps } from 'styled-system';
 
 type Props = {
   as?: any;
   children: any;
   className?: string;
   href: string;
-};
+} & TypographyProps;
 
 const StyledLink = ({ as, children, className, href }: Props) => (
   <Link href={href} as={as} passHref>
@@ -18,6 +19,7 @@ const StyledLink = ({ as, children, className, href }: Props) => (
 );
 
 export default styled(StyledLink)`
+  ${typography};
   color: ${({ theme }) => theme.colors.primary};
   text-decoration: none;
   transition: all 0.2s ease-in-out;
