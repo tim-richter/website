@@ -19,3 +19,5 @@ describe('Blog page', () => {
     });
   });
 });
+
+export {};

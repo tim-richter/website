@@ -17,3 +17,5 @@ describe('Homepage', () => {
     });
   });
 });
+
+export {};

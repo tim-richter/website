@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import StyledComponent from '../../tests/styledComponent';
-import Post from './[slug]';
+import StyledComponent from '../styledComponent';
+import Post from '../../pages/blog/[slug]';
 
 describe('PAGE blog/[slug]', () => {
   it('should render without crashing', () => {
