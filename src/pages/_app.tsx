@@ -7,6 +7,7 @@ import GlobalStyle from '../style/global';
 import initFonts from '../util/fonts';
 import Header from '../layouts/Header';
 import { useApollo } from '../graphql/apolloClient';
+import Footer from '../layouts/Footer';
 
 export default function App({ Component, pageProps, router }) {
   const apolloClient = useApollo(pageProps);
@@ -37,6 +38,7 @@ export default function App({ Component, pageProps, router }) {
           >
             <Component {...pageProps} />
           </motion.div>
+          <Footer />
         </ThemeProvider>
       </ApolloProvider>
     </>
