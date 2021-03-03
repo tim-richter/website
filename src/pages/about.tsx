@@ -42,7 +42,7 @@ const About = () => {
             <a href="https://www.ganztags.net/" target="_blank" rel="noreferrer nofollow">
               ganztags.
             </a>{' '}
-            is a agency specialising in online marketing. We create websites for clients primarily using (headless)
+            is an agency specialising in online marketing. We create websites for clients primarily using (headless)
             wordpress and gatsby/next.js. I&apos;m responsible for creating/maintaining these websites, implement the
             design correctly and making sure the website is compliant with best practices for seo, sea etc.
           </DropdownCard>
