@@ -21,7 +21,7 @@
     "fontfaceobserver": "^2.1.0",
     "framer-motion": "^2.9.4",
     "graphql": "^15.4.0",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "next": "latest",
     "polished": "^4.0.3",
     "prop-types": "^15.7.2",
