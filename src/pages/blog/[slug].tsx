@@ -75,8 +75,10 @@ interface Props {
   };
 }
 
-const Post: React.FC<Props> = ({ data: { content, image, title, description, publishedAt, error } }) => {
-  if (error) return <ErrorPage statusCode={404} />;
+const Post: React.FC<Props> = ({ data }) => {
+  if (!data || data.error) return <ErrorPage statusCode={404} />;
+
+  const { content, image, title, description, publishedAt } = data;
 
   return (
     <BaseLayout seo={{ title, description, image: buildImageLinkUrl(image.url) }}>
@@ -134,12 +136,21 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       .use(html)
       .process(result.data.articles[0].content);
 
+    if (parsedContent.contents) {
+      return addApolloState(apolloClient, {
+        props: {
+          data: {
+            ...result.data.articles[0],
+            content: parsedContent.contents,
+          },
+        },
+        revalidate: ONE_HOUR,
+      });
+    }
+
     return addApolloState(apolloClient, {
       props: {
-        data: {
-          ...result.data.articles[0],
-          content: parsedContent.contents,
-        },
+        data: { error: true },
       },
       revalidate: ONE_HOUR,
     });
