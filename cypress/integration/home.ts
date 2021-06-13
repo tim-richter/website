@@ -13,7 +13,7 @@ describe('Homepage', () => {
     cy.visit('/');
     cy.window().then((win) => {
       expect(win.console.error).to.have.callCount(0);
-      expect(win.console.warn).to.have.callCount(0);
+      expect(win.console.warn).to.have.callCount(1); // ackee throws warnings when on localhost
     });
   });
 });
