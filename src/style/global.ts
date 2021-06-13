@@ -27,13 +27,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${({theme}) => theme.colors.primary};
-    transition: ${({theme}) => theme.transitions.base('color')};
+    color: ${({ theme }) => theme.colors.primary};
+    transition: ${({ theme }) => theme.transitions.base('color')};
     text-decoration: none;
 
     &:hover,
     &:focus {
-      color: ${({theme}) => darken(0.3, theme.colors.primary)};
+      color: ${({ theme }) => darken(0.3, theme.colors.primary)};
     }
   }
 
@@ -41,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
   h2,
   h3,
   h4 {
-    color: ${({theme}) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.text};
   }
 
   h2 {
@@ -58,7 +58,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 46px 24px;
     padding: 8px;
     font-weight: 400;
-    background-color: ${({theme}) => theme.colors.secondary};
+    background-color: ${({ theme }) => theme.colors.secondary};
 
     @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
       margin: 46px 0;
@@ -102,7 +102,7 @@ const GlobalStyle = createGlobalStyle`
   pre[class*="language-"]::-moz-selection,
   code[class*="language-"] ::-moz-selection,
   pre[class*="language-"] ::-moz-selection {
-    background: ${({theme}) => theme.colors.primary};
+    background: ${({ theme }) => theme.colors.primary};
     color: white;
   }
 
@@ -110,7 +110,7 @@ const GlobalStyle = createGlobalStyle`
   pre[class*="language-"]::selection,
   code[class*="language-"] ::selection,
   pre[class*="language-"] ::selection {
-    background: ${({theme}) => theme.colors.primary};
+    background: ${({ theme }) => theme.colors.primary};
     color: white;
   }
 

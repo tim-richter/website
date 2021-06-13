@@ -16,15 +16,13 @@ const Copyright = styled.span`
   color: ${({ theme }) => transparentize(0.3, theme.colors.text)};
 `;
 
-const Footer = () => {
-  return (
-    <Container>
-      <Link href="/legal-notice" fontSize={1}>
-        Legal Notice
-      </Link>
-      <Copyright>© Copyright {new Date().getFullYear()}, Tim Richter</Copyright>
-    </Container>
-  );
-};
+const Footer = () => (
+  <Container>
+    <Link href="/legal-notice" fontSize={1}>
+      Legal Notice
+    </Link>
+    <Copyright>© Copyright {new Date().getFullYear()}, Tim Richter</Copyright>
+  </Container>
+);
 
 export default Footer;

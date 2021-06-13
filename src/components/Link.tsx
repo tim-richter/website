@@ -5,10 +5,10 @@ import { darken } from 'polished';
 import { typography, TypographyProps } from 'styled-system';
 
 type Props = {
-  as?: any;
+  as?: string;
   children: any;
   className?: string;
-  href: string;
+  href?: string;
 } & TypographyProps;
 
 const StyledLink = ({ as, children, className, href }: Props) => (

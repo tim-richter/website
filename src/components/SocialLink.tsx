@@ -30,12 +30,10 @@ type Props = {
  * @param label label if content has no text
  * @param className
  */
-const SocialLink = ({ children, to, label, className }: Props) => {
-  return (
-    <Link href={to} className={className} target="_blank" rel="noreferrer nofollow" aria-label={label}>
-      {children}
-    </Link>
-  );
-};
+const SocialLink = ({ children, to, label, className }: Props) => (
+  <Link href={to} className={className} target="_blank" rel="noreferrer nofollow" aria-label={label}>
+    {children}
+  </Link>
+);
 
 export default SocialLink;

@@ -31,15 +31,13 @@ type Props = {
   };
 };
 
-const BaseLayout = ({ children, seo }: Props) => {
-  return (
-    <>
-      <SEO {...seo} />
-      <Container>
-        <Main>{children}</Main>
-      </Container>
-    </>
-  );
-};
+const BaseLayout = ({ children, seo }: Props) => (
+  <>
+    <SEO {...seo} />
+    <Container>
+      <Main>{children}</Main>
+    </Container>
+  </>
+);
 
 export default BaseLayout;

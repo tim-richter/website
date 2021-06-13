@@ -28,28 +28,26 @@ interface Props {
   };
 }
 
-const Blog: React.FC<Props> = ({ data }) => {
-  return (
-    <BaseLayout seo={{ title: 'Blog', description: 'I also write blog posts' }}>
-      <Title>Blog ✍️</Title>
+const Blog: React.FC<Props> = ({ data }) => (
+  <BaseLayout seo={{ title: 'Blog', description: 'I also write blog posts' }}>
+    <Title>Blog ✍️</Title>
 
-      {data.articles && data.articles.length > 0 && (
-        <Row center="xs">
-          {data.articles.map((article) => (
-            <Col xs={12} sm={6} md={4} key={article.slug}>
-              <PostCard
-                title={article.title}
-                imgUrl={article.image.url}
-                imgAlt={article.image.alternativeText}
-                link={buildPostLinkUrl(article.slug)}
-              />
-            </Col>
-          ))}
-        </Row>
-      )}
-    </BaseLayout>
-  );
-};
+    {data.articles && data.articles.length > 0 && (
+      <Row center="xs">
+        {data.articles.map((article) => (
+          <Col xs={12} sm={6} md={4} key={article.slug}>
+            <PostCard
+              title={article.title}
+              imgUrl={article.image.url}
+              imgAlt={article.image.alternativeText}
+              link={buildPostLinkUrl(article.slug)}
+            />
+          </Col>
+        ))}
+      </Row>
+    )}
+  </BaseLayout>
+);
 
 export const getStaticProps: GetStaticProps = async () => {
   const apolloClient = initializeApollo();
