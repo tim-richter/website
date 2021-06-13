@@ -9,9 +9,10 @@ import { Col, Row } from 'react-styled-flexboxgrid';
 import styled from 'styled-components';
 import { transparentize } from 'polished';
 import ErrorPage from 'next/error';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import BaseLayout from '../../layouts/BaseLayout';
 import { addApolloState, initializeApollo } from '../../graphql/apolloClient';
-import { SINGLE_ARTICLE } from '../../graphql/queries/articles';
+import { ALL_ARTICLES, SINGLE_ARTICLE } from '../../graphql/queries/articles';
 import Image from '../../components/Image';
 import { buildImageLinkUrl } from '../../util/api';
 
@@ -94,7 +95,26 @@ const Post: React.FC<Props> = ({ data: { content, image, title, description, pub
   );
 };
 
-export async function getServerSideProps({ params }) {
+export const getStaticPaths: GetStaticPaths = async () => {
+  const apolloClient = initializeApollo();
+
+  const result = await apolloClient.query({
+    query: ALL_ARTICLES,
+  });
+
+  const paths = result.data.articles.map((article) => ({
+    params: {
+      slug: article.slug,
+    },
+  }));
+
+  return {
+    paths,
+    fallback: true,
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const apolloClient = initializeApollo();
 
   const result = await apolloClient.query({
@@ -103,6 +123,8 @@ export async function getServerSideProps({ params }) {
       slug: params.slug,
     },
   });
+
+  const ONE_HOUR = 60 * 60;
 
   if (result?.data?.articles[0]?.content) {
     const parsedContent = await unified()
@@ -119,6 +141,7 @@ export async function getServerSideProps({ params }) {
           content: parsedContent.contents,
         },
       },
+      revalidate: ONE_HOUR,
     });
   }
 
@@ -127,6 +150,6 @@ export async function getServerSideProps({ params }) {
       data: { error: true },
     },
   });
-}
+};
 
 export default Post;

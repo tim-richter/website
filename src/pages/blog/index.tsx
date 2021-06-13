@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'react-styled-flexboxgrid';
+import { GetStaticProps } from 'next';
 import BaseLayout from '../../layouts/BaseLayout';
 import { initializeApollo, addApolloState } from '../../graphql/apolloClient';
 import { ALL_ARTICLES } from '../../graphql/queries/articles';
@@ -50,18 +51,21 @@ const Blog: React.FC<Props> = ({ data }) => {
   );
 };
 
-export async function getServerSideProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const apolloClient = initializeApollo();
 
   const result = await apolloClient.query({
     query: ALL_ARTICLES,
   });
 
+  const ONE_HOUR = 60 * 60;
+
   return addApolloState(apolloClient, {
     props: {
       data: result.data,
     },
+    revalidate: ONE_HOUR,
   });
-}
+};
 
 export default Blog;
