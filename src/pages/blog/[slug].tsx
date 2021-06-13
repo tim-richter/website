@@ -75,8 +75,10 @@ interface Props {
   };
 }
 
-const Post: React.FC<Props> = ({ data: { content, image, title, description, publishedAt, error } }) => {
-  if (error) return <ErrorPage statusCode={404} />;
+const Post: React.FC<Props> = ({ data }) => {
+  if (!data || data.error) return <ErrorPage statusCode={404} />;
+
+  const { content, image, title, description, publishedAt } = data;
 
   return (
     <BaseLayout seo={{ title, description, image: buildImageLinkUrl(image.url) }}>
@@ -108,6 +110,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
     },
   }));
 
+  console.log(paths);
+
   return {
     paths,
     fallback: true,
@@ -126,7 +130,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const ONE_HOUR = 60 * 60;
 
-  if (result?.data?.articles[0]?.content) {
+  if (result && result?.data?.articles[0]?.content) {
     const parsedContent = await unified()
       .use(markdown)
       .use(remarkRehype)
@@ -134,14 +138,22 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       .use(html)
       .process(result.data.articles[0].content);
 
+    if (parsedContent.contents) {
+      return addApolloState(apolloClient, {
+        props: {
+          data: {
+            ...result.data.articles[0],
+            content: parsedContent.contents,
+          },
+        },
+        revalidate: ONE_HOUR,
+      });
+    }
+
     return addApolloState(apolloClient, {
       props: {
-        data: {
-          ...result.data.articles[0],
-          content: parsedContent.contents,
-        },
+        data: { error: true },
       },
-      revalidate: ONE_HOUR,
     });
   }
 
