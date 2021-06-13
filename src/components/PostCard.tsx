@@ -27,17 +27,15 @@ const Title = styled.h2`
   margin: 0;
 `;
 
-const PostCard: React.FC<Props> = ({ title, imgUrl, imgAlt, link }) => {
-  return (
-    <Link href={link}>
-      <Card padding="0">
-        <StyledImg src={imgUrl} alt={imgAlt} isFromApi />
-        <Content>
-          <Title>{title}</Title>
-        </Content>
-      </Card>
-    </Link>
-  );
-};
+const PostCard: React.FC<Props> = ({ title, imgUrl, imgAlt, link }) => (
+  <Link href={link}>
+    <Card padding="0">
+      <StyledImg src={imgUrl} alt={imgAlt} isFromApi />
+      <Content>
+        <Title>{title}</Title>
+      </Content>
+    </Card>
+  </Link>
+);
 
 export default PostCard;

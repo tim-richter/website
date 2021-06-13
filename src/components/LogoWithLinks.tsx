@@ -33,14 +33,12 @@ const StyledLogo = styled(Logo)`
   }
 `;
 
-const LogoWithLinks = () => {
-  return (
-    <Container>
-      <StyledLink href="/about">About</StyledLink>
-      <StyledLogo />
-      <StyledLink href="/blog">Blog</StyledLink>
-    </Container>
-  );
-};
+const LogoWithLinks = () => (
+  <Container>
+    <StyledLink href="/about">About</StyledLink>
+    <StyledLogo />
+    <StyledLink href="/blog">Blog</StyledLink>
+  </Container>
+);
 
 export default LogoWithLinks;

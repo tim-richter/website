@@ -37,16 +37,14 @@ type Props = {
   href: string;
 };
 
-const TeaserCard = ({ title, description, image, href }: Props) => {
-  return (
-    <Link href={href}>
-      <Container>
-        <Title>{title}</Title>
-        <Description>{description}</Description>
-        {image && <Image src={image} />}
-      </Container>
-    </Link>
-  );
-};
+const TeaserCard = ({ title, description, image, href }: Props) => (
+  <Link href={href}>
+    <Container>
+      <Title>{title}</Title>
+      <Description>{description}</Description>
+      {image && <Image src={image} />}
+    </Container>
+  </Link>
+);
 
 export default TeaserCard;
