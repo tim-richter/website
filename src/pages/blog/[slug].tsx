@@ -110,8 +110,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     },
   }));
 
-  console.log(paths);
-
   return {
     paths,
     fallback: true,
@@ -130,7 +128,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const ONE_HOUR = 60 * 60;
 
-  if (result && result?.data?.articles[0]?.content) {
+  if (result?.data?.articles[0]?.content) {
     const parsedContent = await unified()
       .use(markdown)
       .use(remarkRehype)
@@ -154,6 +152,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       props: {
         data: { error: true },
       },
+      revalidate: ONE_HOUR,
     });
   }
 
