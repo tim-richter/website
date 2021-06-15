@@ -7,7 +7,7 @@ describe('COMPONENT PostCard', () => {
   it('should render without crashing', () => {
     render(
       <StyledComponent>
-        <PostCard imgAlt="Test Alt" link="Test Link" imgUrl="Test Url" title="Title" />
+        <PostCard imgAlt="Test Alt" link="Test Link" imgUrl="/test-url" title="Title" />
       </StyledComponent>
     );
     expect(screen.getByText('Title')).toBeInTheDocument();

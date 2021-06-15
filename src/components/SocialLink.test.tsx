@@ -7,7 +7,7 @@ describe('COMPONENT SocialLink', () => {
   it('should render without crashing', () => {
     render(
       <StyledComponent>
-        <SocialLink to="Test Url">Test Content</SocialLink>
+        <SocialLink to="/test-url">Test Content</SocialLink>
       </StyledComponent>
     );
     expect(screen.getByText('Test Content')).toBeInTheDocument();

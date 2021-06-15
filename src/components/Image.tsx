@@ -13,7 +13,7 @@ interface Props {
 }
 
 const Image: React.FC<Props> = ({ src, alt, isFromApi, width, height, layout, placeholder, blurDataURL }) => {
-  const sourceUrl = isFromApi ? process.env.NEXT_PUBLIC_BACKEND_URL + src : src;
+  const sourceUrl = isFromApi && process.env.NEXT_PUBLIC_BACKEND_URL ? process.env.NEXT_PUBLIC_BACKEND_URL + src : src;
 
   return (
     <NextImage

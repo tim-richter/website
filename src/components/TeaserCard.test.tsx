@@ -7,7 +7,7 @@ describe('COMPONENT TeaserCard', () => {
   it('should render without crashing', () => {
     render(
       <StyledComponent>
-        <TeaserCard description="Test Description" href="Test Url" title="Test Title" />
+        <TeaserCard description="Test Description" href="/test-url" title="Test Title" />
       </StyledComponent>
     );
     expect(screen.getByText('Test Title')).toBeInTheDocument();
