@@ -8,6 +8,7 @@ const Container = styled.footer`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 16px 0;
 `;
 
 const Copyright = styled.span`
