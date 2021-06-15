@@ -6,6 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --fix .",
+    "lint:next": "npx next lint",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:e2e": "start-server-and-test start http://localhost:3000 test:e2e:run",
