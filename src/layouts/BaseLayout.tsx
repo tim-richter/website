@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-styled-flexboxgrid';
 import SEO from '../components/SEO';
+import Scripts from '../components/Scripts';
 
 const Container = styled(Grid)`
   display: flex;
@@ -33,6 +34,7 @@ type Props = {
 
 const BaseLayout = ({ children, seo }: Props) => (
   <>
+    <Scripts />
     <SEO {...seo} />
     <Container>
       <Main>{children}</Main>

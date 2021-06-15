@@ -11,7 +11,7 @@ describe('PAGE blog/[slug]', () => {
           data={{
             content: 'Test Content',
             error: false,
-            image: { url: 'Test Url' },
+            image: { url: '/test-url' },
             title: 'Test Title',
             description: 'Test Description',
             publishedAt: new Date(),
@@ -29,7 +29,7 @@ describe('PAGE blog/[slug]', () => {
           data={{
             content: 'Test Content',
             error: true,
-            image: { url: 'Test Url' },
+            image: { url: '/test-url' },
             title: 'Test Title',
             description: 'Test Description',
             publishedAt: new Date(),

@@ -21,7 +21,7 @@ describe('PAGE blog/', () => {
             articles: [
               {
                 title: 'Test Title',
-                image: { url: 'Test Url', alternativeText: 'Test Alt', caption: 'Test Caption' },
+                image: { url: '/test-url', alternativeText: 'Test Alt', caption: 'Test Caption' },
                 slug: 'Test Slug',
               },
             ],

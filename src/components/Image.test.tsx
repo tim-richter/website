@@ -7,7 +7,7 @@ describe('COMPONENT Image', () => {
   it('should render without crashing', () => {
     render(
       <StyledComponent>
-        <Image src="test" alt="test" />
+        <Image src="/test-url" alt="test" width={160} height={160} />
       </StyledComponent>
     );
     expect(screen.getByRole('img')).toBeInTheDocument();
