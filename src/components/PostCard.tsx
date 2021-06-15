@@ -30,7 +30,7 @@ const Title = styled.h2`
 const PostCard: React.FC<Props> = ({ title, imgUrl, imgAlt, link }) => (
   <Link href={link}>
     <Card padding="0">
-      <StyledImg src={imgUrl} alt={imgAlt} isFromApi />
+      <StyledImg src={imgUrl} alt={imgAlt} isFromApi width={1920} height={1464} />
       <Content>
         <Title>{title}</Title>
       </Content>

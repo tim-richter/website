@@ -89,7 +89,7 @@ const Post: React.FC<Props> = ({ data }) => {
           <Date>{dayjs(publishedAt).format('YYYY MMMM DD')}</Date>
         </HeaderTextContainer>
         <Col xs={12} sm={8} md={7}>
-          <Image src={image.url} alt="Bla" isFromApi />
+          <Image src={image.url} alt="Bla" width={1920} height={1464} isFromApi />
         </Col>
       </StyledRow>
       <Content dangerouslySetInnerHTML={{ __html: content }} />
